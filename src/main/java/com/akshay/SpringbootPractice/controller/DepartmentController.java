@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.akshay.SpringbootPractice.exception.DepartmentNotFoundException;
 import com.akshay.SpringbootPractice.models.Department;
 import com.akshay.SpringbootPractice.service.DepartmentService;
 
@@ -40,7 +41,7 @@ public class DepartmentController {
 	}
 
 	@GetMapping("/departments/{id}")
-	public Department getDepartmentById(@PathVariable("id") Long id){
+	public Department getDepartmentById(@PathVariable("id") Long id) throws DepartmentNotFoundException{
 		return departmentService.getDepartmentById(id);
 	}
 

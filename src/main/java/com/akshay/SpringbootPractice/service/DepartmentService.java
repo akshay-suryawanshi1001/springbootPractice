@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.web.bind.annotation.PathVariable;
 
+import com.akshay.SpringbootPractice.exception.DepartmentNotFoundException;
 import com.akshay.SpringbootPractice.models.Department;
 
 public interface DepartmentService {
@@ -12,7 +13,7 @@ public interface DepartmentService {
 	
 	public List<Department> getDepartmentList();
 	
-	public Department getDepartmentById(Long deparmentId);
+	public Department getDepartmentById(Long deparmentId) throws DepartmentNotFoundException;
 	
 	public void deleteDepartmentById(Long deparmentId);
 	

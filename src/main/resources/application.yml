@@ -1,0 +1,43 @@
+server:
+  port: '8081'
+
+welcome:
+  message:
+    config: Welcome Akshay !!!
+
+spring:
+  profiles:
+    active: dev
+---
+spring:
+  profiles: dev
+  datasource:
+    url: jdbc:mysql://localhost:3306/department_crud_demo
+    driverClassName: com.mysql.jdbc.Driver
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: 'true'
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+        exclude: "env,beans"
+---
+
+spring:
+  profiles: qa
+  datasource:
+    url: jdbc:mysql://localhost:3306/department_crud_demo
+    driverClassName: com.mysql.jdbc.Driver
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: 'true'
+
